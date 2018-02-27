@@ -1,0 +1,251 @@
+ <!-- COUNTER-->
+      <section id="counter" class="counter">
+            <div class="main_counter_area">
+                <div class="overlay p-y-3">
+                    <div class="container">
+					    <div class="row">
+							<div class="welcome">
+								Welcome!
+							</div>	
+						</div>
+                        <div class="row">
+                            <div class="main_counter_content text-center white-text wow fadeInUp">
+                                <div class="col-md-4">
+                                    <div class="single_counter p-y-2 m-t-1">
+                                      
+                                        <h2 class="all-counter">100</h2>
+                                        <p>All vouchers</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single_counter p-y-2 m-t-1">
+                                       
+                                        <h2 class="notUsed-counter">80</h2>
+                                        <p>Not used</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single_counter p-y-2 m-t-1">
+                                        
+                                        <h2 class="used-counter">20</h2>
+                                        <p>Used</p>
+                                    </div>
+                                </div>
+                             </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<!-- COUNTER -->
+		
+<section id="vouchers" class="vouchers">
+	<hr>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+			
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">+ Add voucher</button>
+			<!-- CLIENT-->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel">Register to get a voucher</h4>
+							</div>
+				<div class="modal-body">
+						<!--FORM-->
+				<form id="clientForm" method="POST" action="#">
+				<div class="row">
+                    <div id="error" class="col-sm-12" style="color: #ff0000; margin-top: 5px; margin-bottom: 5px;"></div>
+					<!-- Name and email -->                
+					<div class="col-sm-6">
+					<!-- Name -->
+					<div class="form-group has-feedback">
+						<label for="clientName" class="control-label">Enter your name:</label>
+						<input type="text" id="clientName" name="clientName" class="form-control" required="required" value="" placeholder="e.g. John Doe" minlength="2" maxlength="30">
+						<span class="glyphicon form-control-feedback"></span>
+					</div>
+					</div>
+					<div class="col-sm-6">
+					<!-- Email -->
+						<div class="form-group has-feedback">
+							<label for="clientEmail" class="control-label">Enter your email:</label>
+							<input type="email" id="clientEmail" name="clientEmail" class="form-control" required="required"  value="" placeholder="e.g. ivan@mail.ru" maxlength="30">
+							<span class="glyphicon form-control-feedback"></span>
+						</div>
+					</div>
+				</div>
+					<!-- OFFER SELECTOR -->
+				<div class="form-group has-feedback">
+					<label for="offer" class="control-label">Choose an offer:</label>
+		<!--get from `offerName` field in `Offer` table-->
+					<select id="offer" class="selectpicker form-control" data-style="btn-info">
+					<option value="1">Choose an offer</option>
+					
+					</select>
+					
+				</div>
+					<!-- Generated code -->
+				<div class="form-group has-feedback">
+					<label for="myPassword" class="control-label">Your voucher code</label>
+		<!--generated-->
+				<h3 class="text-center" style="color:red" id="myPassword"></h3>
+				<input onclick="password(8)" id="voucherCode" type="button" class="form-control btn btn-block btn-success" value="Generate code!" />
+				</div>
+            </form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="submit" id="submitClient" class="btn btn-primary" value="Insert">Submit</button>
+							</div>
+							<div class="modal-after"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-3"> 
+				<input class="form-control" type="search" value="Search" id="example-search-input">
+			</div>
+			<div class="col-md-4">
+			<a href="#" class="table-link" data-toggle="modal" data-target="#myModalOffer">	<!-- Settings button FORM -->
+				<span class="fa-stack">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-cog fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+				<!-- SETTINGS-->
+				<div class="modal fade" id="myModalOffer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel2">Add an offer</h4>
+							</div>
+							<div class="modal-body">
+								<!-- FORM-->
+							<form id="settingsForm" method="POST" action="javascript:void(0);">
+							<div class="row">
+								<div id="error" class="col-sm-12" style="color: #ff0000; margin-top: 5px; margin-bottom: 5px;"></div>
+				                
+								<div class="col-sm-6">
+					
+									<div class="form-group has-feedback">
+									<label for="offerName" class="control-label">Enter the offer:</label>
+					
+							<input type="text" id="offerName" name="offerName" class="form-control" required="required" value="" placeholder="e.g.1 day in Spa" minlength="2" maxlength="100">
+							<span class="glyphicon form-control-feedback"></span>
+						</div>
+					</div>
+                <div class="col-sm-6">
+         
+					<div class="form-group has-feedback">
+
+						<label for="discount" class="control-label">Percent of a sale:</label>
+						<select id="discount" class="selectpicker form-control" data-style="btn-info">
+							<option>5</option>
+							<option>10</option>
+							<option>15</option>
+						</select>
+
+						<span class="glyphicon form-control-feedback"></span>
+					</div>
+                </div>
+            </div>
+               <!-- Exp. date -->
+              <div class="form-group has-feedback">
+                <label for="offer" class="control-label">Exp.Date</label>
+                <input type="date" id="expDate" class="form-control" required="required"></input>
+              </div>
+            </form>
+				
+							</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="submit" id="submitOffer" class="btn btn-primary" value="Insert">Submit</button>
+			
+			</div>
+			<div class="modal-after"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                <th><span>Voucher Code</span></th>
+                                <th><span>Used</span></th>
+                                <th class="text-center"><span>Status</span></th>
+                                <th><span>Email</span></th>
+                                <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <!--CREATE the ROWS-->
+                            <?
+
+                              $conn = mysqli_connect('localhost', 'admin', '123','voucher');
+
+                              if (!$conn) {
+                                  die("Connection failed: " . mysqli_connect_error());
+                              }
+
+                               $str = "SELECT * FROM vc_voucher ORDER BY voucherId";
+
+                               $res = $conn->query($str);
+
+                            ?>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                     <a href="#" class="user-link">Code number</a>
+                                    </td>
+                                    <td>2013/08/12</td>
+                                    <td class="text-center">
+                                        <span class="label label-success">Status</span>
+                                    </td>
+                                    <td>
+                                        <a href="#">example@mail.com</a>
+                                    </td>
+									<!--setting buttons-->
+                                    <td style="width: 20%;">
+                                        <!--a href="#" class="table-link">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a-->
+                                        <a href="#" class="table-link">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                        <a href="#" id="del" class="table-link danger"> 
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+									<!--setting buttons-->
+                                </tr>
+                            </tbody>
+                        </table>
+						
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+             
+		</section>
