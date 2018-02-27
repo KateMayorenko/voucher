@@ -17,7 +17,7 @@ $ob = new vcFunctions();
 <html>
 <head>
 <!--Styles-->
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="main.css">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 <!--Styles-->
@@ -32,8 +32,8 @@ $ob = new vcFunctions();
      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
      <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/ajaxForm.js"></script>
-    <script type="text/javascript" src="js/cookies.js"></script>
+    <script type="text/javascript" src="ajaxForm.js"></script>
+    <script type="text/javascript" src="cookies.js"></script>
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
